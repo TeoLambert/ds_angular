@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Statistique } from './models/statistique';
 import { StatistiqueService } from './statistique.service';
@@ -12,7 +13,7 @@ import { StatistiqueService } from './statistique.service';
 export class AppComponent {
   title = 'ds_angular';
 
-  constructor(public statService : StatistiqueService){}
+  constructor(public statService : StatistiqueService, private http : HttpClient){}
   
   supprimerStatistique(stat : Statistique){
     let pos = this.statService.stats.indexOf(stat);

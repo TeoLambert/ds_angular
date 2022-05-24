@@ -5,7 +5,7 @@ import { Statistique } from './models/statistique';
 })
 export class StatistiqueService {
 
-  stats: Statistique[] = [];
+  public stats: Statistique[] = [];
 
   constructor(){
 
@@ -31,4 +31,6 @@ export class StatistiqueService {
 
     setTimeout(() =>{ this.stats.push(stat3) }, 5000);
   }
+
+ 
 }

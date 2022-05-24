@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Statistique } from '../models/statistique';
 import { StatistiqueService } from '../statistique.service';
 
@@ -10,11 +10,14 @@ import { StatistiqueService } from '../statistique.service';
 export class StatistiqueComponent implements OnInit {
 
   @Input() stat! : Statistique;
+  @Output() suppression : EventEmitter<Statistique> = new EventEmitter();
 
   constructor(private statService: StatistiqueService) { }
 
   ngOnInit(): void {
     
   }
+
+  clickSuppr() { this.suppression.emit(); }
 
 }

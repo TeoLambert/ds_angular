@@ -1,1 +1,1 @@
-<app-statistique *ngFor="let stat of stats" [stat]="stat">
+<app-statistique *ngFor="let stat of statService.stats" [stat]="stat" (suppression)="supprimerStatistique(stat)">
